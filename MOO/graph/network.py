@@ -58,7 +58,7 @@ class Network():
             
         self.num_servers = len(self.server_ids)
         self.sum_cost_servers = np.sum(self.cost_servers)
-        print("sum server cost: ", self.sum_cost_servers)
+        # print("sum server cost: ", self.sum_cost_servers)
         self.min_cost_servers = np.min(self.cost_servers)
         self.max_cost_servers = np.max(self.cost_servers)
         self.N_server = [self.N[id] for id in self.server_ids]
@@ -84,7 +84,7 @@ class Network():
         self.create_networkx()
 
         self.max_cost_vnfs = sum(i.total_vnf_cost for i in self.N_server)
-        print(self.max_cost_vnfs)
+        # print(self.max_cost_vnfs)
         self.max_delay_links = sum(i.delay for i in self.L.values())
 
 

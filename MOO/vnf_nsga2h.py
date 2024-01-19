@@ -1,5 +1,5 @@
 import os, csv
-from pymoo.algorithms.moo.nsga2hill import NSGA2_Hill
+from pymoo.algorithms.moo.nsga2h import NSGA2_H
 from pymoo.problems import *
 from pymoo.optimize import minimize
 from graph.network import Network
@@ -23,7 +23,7 @@ for name in names:
                 sfc_set = SFC_SET("dataset/" + name_folder + "/request" + str(request) + ".txt")
                 rs = []
                 problem = get_problem("nfv", network, sfc_set)
-                algorithm = NSGA2_Hill(pop_size=100)
+                algorithm = NSGA2_H(pop_size=100)
                 res = minimize(problem,
                                 algorithm,
                                 ('n_gen', 100),
